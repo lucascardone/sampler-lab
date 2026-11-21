@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="https://github.com/lucascardone/sampler-lab/releases/latest"><img alt="Descargar para Windows" src="https://img.shields.io/badge/Descargar-Windows-ffb74d?style=for-the-badge&logo=windows&logoColor=12141a&labelColor=ffb74d&color=262a35"></a>
-  <a href="https://ko-fi.com/lucascardone"><img alt="Apoyar en Ko-fi" src="https://img.shields.io/badge/Apoyar-Ko--fi-ff5e5b?style=for-the-badge&logo=kofi&logoColor=white"></a>
+  <a href="https://ko-fi.com/samplerlab"><img alt="Apoyar en Ko-fi" src="https://img.shields.io/badge/Apoyar-Ko--fi-ff5e5b?style=for-the-badge&logo=kofi&logoColor=white"></a>
   <a href="LICENSE"><img alt="Licencia GPL-3.0" src="https://img.shields.io/badge/licencia-GPL--3.0-262a35?style=for-the-badge"></a>
 </p>
 
@@ -94,7 +94,7 @@ rápido). El resto funciona sin internet.
 
 Sampler Lab es gratis y lo va a seguir siendo. Si te sirvió:
 
-- ☕ **Invitame un cafecito en [Ko-fi](https://ko-fi.com/lucascardone)**
+- ☕ **Invitame un cafecito en [Ko-fi](https://ko-fi.com/samplerlab)**
 - 💸 En [itch.io](https://lucascardone.itch.io/sampler-lab) podés pagar lo que quieras al bajarla
 - ⭐ Dale una estrella al repo y mostrale a alguien lo que hiciste con la app
 
