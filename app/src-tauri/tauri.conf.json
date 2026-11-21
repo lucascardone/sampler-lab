@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Sampler Lab",
+  "version": "0.1.0",
+  "identifier": "com.samplerlab.app",
+  "build": {
+    "beforeDevCommand": "node scripts/prepare-resources.mjs && npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "node scripts/prepare-resources.mjs --release && npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Sampler Lab",
+        "width": 1200,
+        "height": 760,
+        "minWidth": 800,
+        "minHeight": 560,
+        "dragDropEnabled": true
+      }
+    ],
+    "security": {
+      "csp": null,
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "$APPCACHE/**",
+          "$APPDATA/**"
+        ]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "publisher": "Lucas Cardone",
+    "copyright": "© 2026 Lucas Cardone · GPL-3.0-or-later",
+    "homepage": "https://github.com/lucascardone/sampler-lab",
+    "license": "GPL-3.0-or-later",
+    "category": "Music",
+    "shortDescription": "Grabá, cortá samples y hacé música",
+    "longDescription": "Sampler Lab: grabá lo que suena en tu PC, cortá samples, separá instrumentos y armá temas. Para gente que no es productora.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": {
+      "resources/engine/": "engine/",
+      "resources/bin/": "bin/"
+    },
+    "windows": {
+      "nsis": {
+        "installerHooks": "./windows/hooks.nsh"
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "sampler-lab",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Grabá, cortá samples y hacé música. Para gente que no es productora.",
+  "license": "GPL-3.0-or-later",
+  "author": "Lucas Cardone",
+  "homepage": "https://github.com/lucascardone/sampler-lab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucascardone/sampler-lab.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-dialog": "^2.8.4",
+    "i18next": "^27.0.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-i18next": "^18.0.0",
+    "wavesurfer.js": "^7.12.12"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^6.0.2",
+    "typescript": "~6.0.3",
+    "vite": "^8.0.16",
+    "vitest": "^3.2.7"
+  }
+}

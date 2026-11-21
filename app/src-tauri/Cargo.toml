@@ -1,0 +1,66 @@
+[package]
+name = "sampler-lab"
+version = "0.1.0"
+description = "Sampler Lab: grabá, cortá samples y hacé música"
+authors = ["Lucas Cardone"]
+license = "GPL-3.0-or-later"
+repository = "https://github.com/lucascardone/sampler-lab"
+homepage = "https://github.com/lucascardone/sampler-lab"
+edition = "2024"
+
+[lib]
+# The `_lib` suffix avoids a name clash between the lib and bin targets on Windows
+# (https://github.com/rust-lang/cargo/issues/8519).
+name = "sampler_lab_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset", "tray-icon", "image-png"] }
+tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
+tauri-plugin-single-instance = "2"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+# System-audio capture. On Windows, an input stream on an *output* device = WASAPI loopback.
+cpal = "0.15"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+hound = "3.5"
+# 0.5 is the long-stable API; "all" enables WAV/AIFF/FLAC/MP3/OGG-Vorbis/AAC-M4A/ALAC.
+symphonia = { version = "0.5", features = ["all"] }
+rustfft = "6"
+midir = "0.10"
+tiny_http = "0.12"
+getrandom = "0.3"
+qrcode = { version = "0.14", default-features = false, features = ["svg"] }
+# Deleted recordings go to the Recycle Bin, not straight to oblivion.
+trash = "5"
+# Sound packs: HTTPS download (rustls, no OpenSSL), integrity check and safe unzip.
+ureq = { version = "2", default-features = false, features = ["tls"] }
+sha2 = "0.10"
+zip = { version = "2", default-features = false, features = ["deflate"] }
+# "Tocar juntos" from different homes: direct, encrypted connections dialed by key (QUIC,
+# hole punching; falls back to n0's free public relays). No accounts, no server of ours.
+iroh = "1.4"
+tokio = { version = "1", features = ["rt-multi-thread", "net", "io-util", "macros", "time", "sync"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+# Decoding/DSP in an unoptimized build is ~50x slower (a full MP3 took 20+ s).
+# Optimize dependencies (symphonia, hound...) and our own code even in `tauri dev`.
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true

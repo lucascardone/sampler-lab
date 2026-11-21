@@ -1,0 +1,12 @@
+node_modules/
+dist/
+target/
+.vscode/
+*.log
+__pycache__/
+.venv/
+
+# Staged by app/scripts/prepare-resources.mjs
+app/src-tauri/resources/engine/
+app/src-tauri/resources/bin/
+.pytest_cache/
